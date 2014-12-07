@@ -1,4 +1,4 @@
-sinatra_tutsplus_3
+sinatra_tutsplus_2
 ==================
 
-http://code.tutsplus.com/tutorials/singing-with-sinatra-the-encore--net-19364
+http://code.tutsplus.com/tutorials/singing-with-sinatra-the-recall-app--net-19128
