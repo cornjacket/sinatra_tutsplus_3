@@ -3,6 +3,8 @@ require 'sinatra'
 require 'data_mapper'
 require 'sinatra/reloader' if development?
 
+SITE_TITLE = "Recall"
+SITE_DESCRIPTION = "'cause you're too busy to remember"
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/recall.db")
  
@@ -35,6 +37,12 @@ post '/' do
   n.updated_at = Time.now
   n.save
   redirect '/'
+end
+
+# RSS route needs to be prior to get id route
+get '/rss.xml' do
+    @notes = Note.all :order => :id.desc
+    builder :rss
 end
 
 # edit a note - get route
