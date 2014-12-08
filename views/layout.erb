@@ -14,7 +14,15 @@
       <h2><%= SITE_DESCRIPTION %></h2>
     </hgroup>
   </header>
- 
+
+  <% if flash[:error] %>
+    <p class="error"><%= flash[:error] %></p>
+  <% end %>
+
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+
   <div id="main">
     <%= yield %>
   </div>
